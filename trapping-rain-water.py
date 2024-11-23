@@ -14,7 +14,7 @@ def trap(height: list[int]) -> int:
     dp_r[-1] = height[-1]
     for i in range(l - 2, -1, -1):
         dp_r[i] = max(dp_r[i+1], height[i])
-    
+
     for i in range(1, len(height) - 1):
         water += max(0, min(dp_l[i], dp_r[i]) - height[i])
     return water
